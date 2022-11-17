@@ -37,12 +37,16 @@
 *.i*86
 *.x86_64
 *.hex
+*.bin
+*.elf
 
 # Debug files
 *.dSYM/
 *.su
 *.idb
 *.pdb
+Debug/
+Release/
 
 # Kernel Module Compile Results
 *.mod*
@@ -65,3 +69,24 @@ ctrlp.root
 
 #html
 *.html
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT- autotools
+.autotools
+
+# External tool builders
+.externalToolBuilders/
+
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
