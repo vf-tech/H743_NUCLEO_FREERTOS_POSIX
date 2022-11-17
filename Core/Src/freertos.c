@@ -19,10 +19,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "FreeRTOS.h"
-
-#include "cmsis_os.h"
-#include "main.h"
 #include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -51,16 +50,16 @@
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
 const osThreadAttr_t defaultTask_attributes = {
-    .name = "defaultTask",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityNormal,
+  .name = "defaultTask",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for posix */
 osThreadId_t posixHandle;
 const osThreadAttr_t posix_attributes = {
-    .name = "posix",
-    .stack_size = 128 * 4,
-    .priority = (osPriority_t)osPriorityLow,
+  .name = "posix",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,10 +101,10 @@ void vApplicationTickHook(void) {
 /* USER CODE END 3 */
 
 /**
- * @brief  FreeRTOS initialization
- * @param  None
- * @retval None
- */
+  * @brief  FreeRTOS initialization
+  * @param  None
+  * @retval None
+  */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
 
@@ -129,8 +128,7 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* creation of defaultTask */
-  defaultTaskHandle =
-      osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
+  defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
   /* creation of posix */
   posixHandle = osThreadNew(prvMainPosixTask, NULL, &posix_attributes);
@@ -143,6 +141,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
+
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -152,7 +151,8 @@ void MX_FREERTOS_Init(void) {
  * @retval None
  */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void *argument) {
+void StartDefaultTask(void *argument)
+{
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for (;;) {
@@ -165,3 +165,4 @@ void StartDefaultTask(void *argument) {
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
+
